@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./phaser2.js"></script>
+    <script src="./Boot.js"></script>
+    <script src="./Preloader.js"></script>
+    <script src="./MainMenu.js"></script>
+    <script src="./CharacterSelect.js"></script>
+    <script src="./Level1.js"></script>
+
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        canvas {
+            display: block;
+            margin: auto;
+            margin-top: 4%;
+        }
+    </style>
+
+
+    <title>Boom</title>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            
+            
+            var game = new Phaser.Game(832, 512, Phaser.CANVAS, "");
+            game.state.add("Boot", Game.Boot);
+            game.state.add("Preloader", Game.Preloader);
+            game.state.add("MainMenu", Game.MainMenu);
+            game.state.add("Level1", Game.Level1);
+            game.state.add("CharacterSelect", Game.CharacterSelect);
+
+
+
+            game.state.start("Boot");
+        }
+    </script>
+
+</body>
+
+</html>
